@@ -1,0 +1,99 @@
+<div class="container py-4">
+  <!-- Encabezado Principal -->
+  <div class="text-center mb-5">
+    <h2 class="display-5 fw-bold text-dark">Generador de Reportes Analíticos</h2>
+    <p class="text-muted">Descarga la plantilla oficial en Excel, registra tus productos con sus respectivas fechas de caducidad y súbela para generar métricas automáticas de inventario.</p>
+  </div>
+
+  <!-- Zona de Control de Archivos (Descarga y Carga) -->
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Bloque Izquierdo: Descargar Plantilla -->
+    <div class="col-md-5">
+      <div class="card h-100 shadow-sm border-0 p-4 bg-light rounded-3 text-center d-flex flex-column align-items-center">
+        <div class="my-3">
+          <!-- Icono visual representativo de Excel -->
+          <span class="display-4 text-success" style="font-style: normal;"></span>
+        </div>
+        <h5 class="fw-bold text-dark">1. Descargar Formato Base</h5>
+        <p class="text-muted small px-2">Obtén un archivo Excel en blanco pre-configurado con las columnas obligatorias que el sistema requiere: <strong>nombre, tipo, caducidad, fecha</strong>.</p>
+        <button (click)="descargarPlantilla()" class="btn btn-outline-success mt-auto w-100 shadow-sm fw-semibold">
+          Descargar Plantilla .xlsx
+        </button>
+      </div>
+    </div>
+
+    <!-- Bloque Derecho: Cargar Excel -->
+    <div class="col-md-5">
+      <div class="card h-100 shadow-sm border-0 p-4 bg-white rounded-3 d-flex flex-column">
+        <h5 class="fw-bold text-dark text-center mb-3">2. Subir Archivo Diligenciado</h5>
+        
+        <!-- Alertas Dinámicas de Feedback para el Usuario -->
+        @if (mensajeExito) {
+          <div class="alert alert-success small p-2 text-center shadow-sm" role="alert">
+            <strong>¡Éxito!</strong> {{ mensajeExito }}
+          </div>
+        }
+        @if (mensajeError) {
+          <div class="alert alert-danger small p-2 text-center shadow-sm" role="alert">
+            <strong>Atención:</strong> {{ mensajeError }}
+          </div>
+        }
+
+        <!-- Input de carga de archivos integrado con Bootstrap -->
+        <div class="mb-3 mt-2 flex-grow-1">
+          <label class="form-label small text-secondary fw-semibold">Selecciona tu archivo Excel (.xlsx)</label>
+          <input type="file" class="form-control" (change)="onFileChange($event)" accept=".xlsx, .xls">
+        </div>
+
+        <!-- Botón de Envío Masivo hacia XAMPP -->
+        <button (click)="subirDatos()" [disabled]="productosCargados.length === 0" class="btn btn-primary w-100 mt-3 shadow-sm fw-semibold">
+          Cargar y Almacenar en MySQL
+        </button>
+        
+        <!-- Badge informativo de registros detectados en memoria -->
+        @if (productosCargados.length > 0) {
+          <div class="text-center mt-2">
+            <span class="badge bg-secondary-subtle text-secondary py-1 px-2">
+              {{ productosCargados.length }} registros detectados listos para subir
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Gráficas Dinámicas de Control Visual -->
+  <div class="row g-4 mt-5">
+    <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-2 border-bottom pb-3">
+      <div class="mb-3 mb-md-0">
+        <h3 class="fw-bold text-dark mb-0">Diagnóstico Visual de Inventario</h3>
+        <p class="text-muted small mb-0">Indicadores interactivos procesados dinámicamente desde la base de datos MySQL.</p>
+      </div>
+      <!-- Botón de Exportación Ejecutiva a PDF -->
+      <button (click)="generarReportePDF()" class="btn btn-danger btn-lg shadow-sm d-flex align-items-center gap-2 fw-semibold">
+        <span style="font-style: normal;"></span> Descargar Reporte PDF
+      </button>
+    </div>
+
+    <!-- Gráfica 1: Alertas de Vencimiento Crítico (Barras de Chart.js) -->
+    <div class="col-lg-7">
+      <div class="card shadow-sm border-0 p-4 bg-white rounded-3 h-100">
+        <h6 class="fw-bold text-secondary mb-3">Alerta de Caducidad (Días Restantes por Producto)</h6>
+        <div style="position: relative; height:320px; width:100%;">
+          <canvas id="graficaCaducidad"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfica 2: Volumetría por Categorías (Dona de Chart.js) -->
+    <div class="col-lg-5">
+      <div class="card shadow-sm border-0 p-4 bg-white rounded-3 h-100">
+        <h6 class="fw-bold text-secondary mb-3">Distribución de Productos Más Abundantes</h6>
+        <div style="position: relative; height:320px; width:100%;">
+          <canvas id="graficaTipos"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

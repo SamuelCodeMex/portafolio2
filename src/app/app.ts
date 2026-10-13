@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  imports: [RouterOutlet, RouterLink, RouterLinkActive], // Cargamos las herramientas de navegación
+  templateUrl: './app.html', // Vincula a tu archivo HTML
+  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('mi-portafolio');
+export class AppComponent {
+  title = 'mi-portafolio';
 }

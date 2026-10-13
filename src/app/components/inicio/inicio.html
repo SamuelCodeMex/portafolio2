@@ -1,0 +1,136 @@
+<div class="container py-3">
+  
+    <!-- SECCIÓN 1: HERO - PRESENTACIÓN PRINCIPAL -->
+  <div class="row align-items-center justify-content-center g-5 py-5 mb-5 border-bottom">
+    <!-- 🔍 CORRECCIÓN CLAVE: Añadimos 'text-center' por defecto para móvil y 'text-lg-start' para PCs -->
+    <div class="col-12 col-lg-7 text-center text-lg-start">
+      <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 fw-semibold text-uppercase">Disponibilidad Inmediata / Full-Time</span>
+      
+      <h1 class="display-5 fw-bold lh-1 mb-3 text-dark">
+        Desarrollador Full-Stack & <br>
+        <span class="text-primary">Ingeniero en Sistemas Computacionales</span>
+      </h1>
+      
+      <p class="lead text-muted mb-4 px-2 px-lg-0">
+        Con varios años de trayectoria en programación y formación universitaria teórica concluida, combino bases teóricas sólidas con experiencia práctica para resolver retos complejos. Especializado en crear sistemas modulares desde cero, refactorizar código legacy y optimizar la arquitectura de software.
+      </p>
+      
+      <!-- 🔍 CORRECCIÓN CLAVE EN BOTONES: 'justify-content-center' para móvil y 'justify-content-lg-start' para PCs -->
+      <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+        <a routerLink="/proyectos" class="btn btn-primary btn-lg px-4 shadow-sm fw-semibold">Ver Casos de Estudio</a>
+        <a routerLink="/contacto" class="btn btn-outline-secondary btn-lg px-4 fw-semibold">Contáctame</a>
+      </div>
+    </div>
+    
+    <div class="col-lg-5 d-none d-lg-block text-center">
+      <!-- Ilustración tecnológica limpia -->
+      <img src="sound-button-closeup-laptop-keyboard.webp" 
+           class="img-fluid rounded-3 shadow-sm border" 
+           alt="Entorno de Ingeniería de Software" 
+           loading="lazy">
+    </div>
+  </div>
+
+
+  <!-- SECCIÓN 2: STACK TECNOLÓGICO SELECCIONADO (PROHIBIDO LISTAS DE BULLETS) -->
+  <div class="mb-5 pb-5 border-bottom">
+    <div class="text-center mb-4">
+      <h3 class="fw-bold text-dark">Ecosistema Tecnológico Dominado</h3>
+      <p class="text-muted small">Herramientas implementadas en entornos de producción, optimización y desarrollo ágil.</p>
+    </div>
+    
+    <!-- REEMPLAZO OBLIGATORIO: Tabla de atributos técnicos en lugar de listas -->
+    <div class="table-responsive shadow-sm rounded-3">
+      <table class="table table-hover align-middle mb-0 bg-white border">
+        <thead class="table-dark">
+          <tr>
+            <th style="width: 25%;">Capa / Entorno</th>
+            <th style="width: 45%;">Tecnologías y Frameworks</th>
+            <th style="width: 30%;">Protocolos, Librerías y Herramientas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fw-bold text-secondary">Backend Core</td>
+            <td><span class="badge bg-dark-subtle text-dark me-1">PHP</span> <span class="badge bg-danger-subtle text-danger me-1">Laravel</span> <span class="badge bg-brown-subtle text-dark me-1">JAVA</span> <span class="badge bg-success-subtle text-success">Spring Boot</span></td>
+            <td>REST APIs, JWT Auth, Programación Orientada a Objetos</td>
+          </tr>
+          <tr>
+            <td class="fw-bold text-secondary">Frontend Moderno</td>
+            <td><span class="badge bg-danger-subtle text-danger me-1">Angular</span> <span class="badge bg-info-subtle text-info me-1">React</span> <span class="badge bg-primary-subtle text-primary">JavaScript (ES6+)</span></td>
+            <td>HTML5, CSS3, JQuery, Single Page Applications (SPA)</td>
+          </tr>
+          <tr>
+            <td class="fw-bold text-secondary">Asincronía & Red</td>
+            <td><span class="badge bg-warning-subtle text-warning me-1">JSON</span> <span class="badge bg-secondary-subtle text-dark me-1">Fetch API</span> <span class="badge bg-primary-subtle text-primary">Axios</span></td>
+            <td>AJAX, Peticiones Asíncronas, Consumo de Endpoints</td>
+          </tr>
+          <tr>
+            <td class="fw-bold text-secondary">Datos y Persistencia</td>
+            <td><span class="badge bg-primary-subtle text-primary me-1">MySQL</span> <span class="badge bg-info-subtle text-info">SQL Server</span></td>
+            <td>Consultas Avanzadas, Transacciones PDO, Modelado Relacional</td>
+          </tr>
+          <tr>
+            <td class="fw-bold text-secondary">Infraestructura & Dev</td>
+            <td><span class="badge bg-success-subtle text-success me-1">Docker</span> <span class="badge bg-dark-subtle text-dark me-1">Git</span> <span class="badge bg-black text-white">GitHub</span></td>
+            <td>Contenedores, Control de Versiones, CI/CD Basico</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: PROYECTO DESTACADO (CASO DE ESTUDIO ANALÍTICO) -->
+  <div class="row align-items-center g-5 py-2">
+    <div class="col-lg-6 order-last order-lg-first text-center">
+      <div class="card p-3 shadow-sm border-0 bg-light">
+        <span class="display-1 mb-2"></span>
+        <div class="card-body">
+          <h5 class="fw-bold">Dashboard de Pérdida Cero</h5>
+          <p class="text-muted small">Muestra interactiva del funcionamiento del stack PHP-Angular con análisis predictivo de fechas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6 mx-auto">
+      <h3 class="fw-bold text-dark mb-3">Proyecto Destacado: Generador Analítico</h3>
+      <p class="text-muted">
+        Diseñé y desplegué un software enfocado en resolver un problema crítico de negocio: la pérdida de capital por mermas y caducidad de stock. El sistema procesa lotes de datos y genera reportes inteligentes automatizados.
+      </p>
+      <p class="text-muted small">
+        Este caso de estudio demuestra mi dominio técnico para implementar un stack unificado (Angular, PHP, Bootstrap y MySQL), automatizar la ingesta de archivos Excel binarios, procesar algoritmos de fechas de vencimiento y compilar reportes ejecutivos en PDF acompañados de tableros gráficos dinámicos.
+      </p>
+      <div class="mt-4">
+        <a routerLink="/proyectos" class="btn btn-outline-primary fw-semibold">Probar Generador de Reportes →</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- SECCIÓN 4: FILOSOFÍA PROFESIONAL & METODOLOGÍA -->
+  <div class="bg-dark text-white rounded-3 p-4 p-md-5 shadow-sm mt-5">
+    <div class="row align-items-center g-4">
+      <div class="col-md-8">
+        <span class="badge bg-primary mb-3 px-3 py-2 fw-semibold text-uppercase">Mi Filosofía de Trabajo</span>
+        <h3 class="display-6 fw-bold mb-3 text-white">Adaptabilidad, Resiliencia y Estrategia</h3>
+        <p class="lead text-white-50 mb-4">
+          En un ecosistema tecnológico que evoluciona de forma constante, entiendo que la clave del éxito no radica en memorizarlo todo, sino en dominar los fundamentos y cultivar la capacidad de aprender a desaprender. 
+        </p>
+        <p class="text-white-50 small mb-0">
+          Abordo cada reto técnico con paciencia, organización y resiliencia, manteniendo siempre una visión macro sobre el funcionamiento de las nuevas herramientas. Creo firmemente en la mejora continua del producto impulsada por estrategias de desarrollo ágil, asegurando entregas de valor incrementales, eficientes y alineadas con los objetivos del negocio.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <!-- Tarjeta de métricas de soft-skills -->
+        <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary">
+          <div class="row g-2">
+            <div class="col-6"><div class="p-2 bg-dark rounded text-center"><small class="text-primary d-block fw-bold">🔄 Agile</small><span class="text-white-50 text-mini">Iteración</span></div></div>
+            <div class="col-6"><div class="p-2 bg-dark rounded text-center"><small class="text-primary d-block fw-bold">🧠 Lean</small><span class="text-white-50 text-mini">Adaptación</span></div></div>
+            <div class="col-6"><div class="p-2 bg-dark rounded text-center"><small class="text-primary d-block fw-bold">📈 CI/CD</small><span class="text-white-50 text-mini">Mejora</span></div></div>
+            <div class="col-6"><div class="p-2 bg-dark rounded text-center"><small class="text-primary d-block fw-bold">📋 Scrum</small><span class="text-white-50 text-mini">Estructura</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

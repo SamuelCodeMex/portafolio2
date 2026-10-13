@@ -1,0 +1,47 @@
+<div class="row justify-content-center py-4">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-sm border-0 p-4 bg-white rounded-3">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-dark">Contáctame</h2>
+        <p class="text-muted">¿Tienes algún proyecto en mente? ¡Escríbeme!</p>
+      </div>
+
+      <!-- Alertas dinámicas de Bootstrap para retroalimentación -->
+      @if (mensajeExito) {
+        <div class="alert alert-success shadow-sm mb-4" role="alert">
+          {{ mensajeExito }}
+        </div>
+      }
+      @if (mensajeError) {
+        <div class="alert alert-danger shadow-sm mb-4" role="alert">
+          {{ mensajeError }}
+        </div>
+      }
+
+      <!-- Formulario interactivo conectado a Angular -->
+      <form (ngSubmit)="procesarEnvio()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label fw-semibold text-secondary">Nombre Completo</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" 
+                 [(ngModel)]="datos.nombre" placeholder="Juan Pérez" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="correo" class="form-label fw-semibold text-secondary">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo" name="correo" 
+                 [(ngModel)]="datos.correo" placeholder="juan@correo.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensaje" class="form-label fw-semibold text-secondary">Mensaje</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" 
+                    [(ngModel)]="datos.mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+
+        <div class="d-grid mt-4">
+          <button type="submit" class="btn btn-primary btn-lg shadow-sm">Enviar Mensaje</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
